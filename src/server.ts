@@ -15,7 +15,6 @@ export default async function buildApp(app: FastifyInstance) {
   }
 
   app.post("/login", async (req, reply) => {
-    console.log("sono qui");
     const { email, password } = req.body as { email: string; password: string };
     const user = users.find(
       (u) => u.email === email && u.password === password
