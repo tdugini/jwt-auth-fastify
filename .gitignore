@@ -2,6 +2,7 @@ node_modules
 dist
 .env
 *.log
+/.tap/
 /.idea/.gitignore
 /.idea/jwt-auth-fastify.iml
 /.idea/modules.xml
