@@ -73,7 +73,6 @@ npx eslint .
 ├── tests/
 │   └── auth-flow.test.ts  # Test end-to-end con Tap
 ├── .eslintrc.json
-├── jest.config.js         # (Non usato - può essere rimosso)
 ├── package.json
 └── tsconfig.json
 ```
