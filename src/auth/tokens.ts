@@ -27,7 +27,7 @@ export type TokenPair = {
 };
 
 export function issueTokenPair(app: FastifyInstance, user: User): TokenPair {
-  const issuedAt = Date.now();
+  const issuedAt = Math.max(Date.now(), user.tokensRevokedAt + 1);
   const jti = randomUUID();
 
   refreshTokens.push({
