@@ -1,14 +1,15 @@
 import Fastify from "fastify";
 import buildApp from "./server";
 
-const app = Fastify();
+async function start() {
+  const app = Fastify({ logger: true });
+  await buildApp(app);
 
-buildApp(app).then(() => {
-  app.listen({ port: 3000 }, (err, address) => {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-    console.log(`Server listening at ${address}`);
-  });
+  const port = Number(process.env.PORT ?? 3000);
+  await app.listen({ port, host: "0.0.0.0" });
+}
+
+start().catch((error: unknown) => {
+  console.error(error);
+  process.exit(1);
 });
