@@ -1,17 +1,27 @@
 {
   "name": "jwt-auth-fastify",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "description": "A compact JWT authentication service built with Fastify and TypeScript, focused on token lifecycle and revocation flows.",
   "scripts": {
     "dev": "ts-node src/start.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "test": "tap"
+    "start": "node dist/start.js",
+    "test": "tap tests/**/*.test.ts",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "fastify",
+    "typescript",
+    "jwt",
+    "authentication",
+    "security"
+  ],
+  "author": "Tommaso Dugini",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@fastify/jwt": "^9.1.0",
     "fastify": "^5.3.3"
